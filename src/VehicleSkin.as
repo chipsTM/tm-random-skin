@@ -1,9 +1,3 @@
-[Setting name="Random Favorite Skin" category="Vehicle Skin" description="Currently changes when map switches"]
-bool useRandomFavoriteSkin = true;
-
-// [Setting name="Dev" category="Vehicle Skin" description="Useful for debugging skin related stuff"]
-// bool devLog = false;
-
 namespace VehicleSkin {
 
     class SkinData : Skin {

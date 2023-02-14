@@ -1,7 +1,3 @@
-void OnSettingsChanged() {
-    startnew(LoadSkins);
-}
-
 void LoadSkins() {
     allSkins.RemoveRange(0, allSkins.Length);
     if (Permissions::UseCustomSkin() && useRandomFavoriteSkin) {

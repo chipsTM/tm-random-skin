@@ -1,6 +1,3 @@
-[Setting name="Random Prestige Skin" category="Vehicle Skin" description="Currently changes when map switches"]
-bool useRandomPrestigeSkin = true;
-
 namespace UserPrestige {
 
     dictionary royalTeam = {
