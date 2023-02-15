@@ -12,5 +12,8 @@
 
 ## Change log
 
+### v0.1.1
+- Fixes and Persistent Settings
+
 ### v0.1
 - Initial release

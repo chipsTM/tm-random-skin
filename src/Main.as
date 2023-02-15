@@ -36,6 +36,7 @@ bool isUsingPrestige;
 CGameUserManagerScript@ userMgr;
 CGameDataFileManagerScript@ dataFileMgr;
 MwId userId;
+Skin@ currentSkin;
 
 void Main() {
 #if TMNEXT
@@ -89,8 +90,14 @@ void Main() {
             }
         }
 
-        if (changeFlag && Permissions::UseCustomSkin() && allSkins.Length > 0) {
-            uint randomIndex = Math::Rand(0,allSkins.Length);
+        if (changeFlag && allSkins.Length > 0) {
+
+            uint randomIndex = Math::Rand(0, allSkins.Length);
+            if (currentSkin !is null) {
+                while (allSkins[randomIndex].Id == currentSkin.Id) {
+                    randomIndex = Math::Rand(0, allSkins.Length);
+                }
+            }
             // print(randomIndex);
 
             if (allSkins[randomIndex].SkinType == "CustomSkin") {
@@ -105,6 +112,8 @@ void Main() {
             } else {
                 trace("got some other type of skin :eyes:");
             }
+
+            @currentSkin = @allSkins[randomIndex];
         }
 
         yield();
