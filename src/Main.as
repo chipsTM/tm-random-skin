@@ -100,7 +100,7 @@ void Main() {
             }
             // print(randomIndex);
 
-            if (allSkins[randomIndex].SkinType == "CustomSkin") {
+            if (allSkins[randomIndex].SkinType == "CustomSkin" && Permissions::UseCustomSkin()) {
                 if (isUsingPrestige) {
                     UserPrestige::ResetCurrentAccountPrestige(userMgr, userId);
                     isUsingPrestige = false;
