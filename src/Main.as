@@ -63,7 +63,7 @@ void Main() {
             inGame = false;
             changeFlag = true;
             // print("triggered from map exit");
-        } else if (pg !is null) {
+        } else if (pg !is null && cmap !is null) {
             inGame = true;
 
             uint endTime = pg.Arena.Rules.RulesStateEndTime;
