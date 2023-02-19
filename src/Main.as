@@ -18,7 +18,38 @@ void LoadSkins() {
         UserPrestige::GetCurrentPrestige(userMgr, userId, isUsingPrestige);
         // print(isUsingPrestige);
         for (uint i = 0; i < UserPrestige::userPrestiges.Length; i++) {
-            allSkins.InsertLast(UserPrestige::userPrestiges[i]);
+            bool addMedal = false;
+            bool addType = false;
+            
+            if (AuthorSkin && UserPrestige::userPrestiges[i].CategoryLevel == 4) {
+                addMedal = true;
+            }
+            if (GoldSkin && UserPrestige::userPrestiges[i].CategoryLevel == 3) {
+                addMedal = true;
+            }
+            if (SilverSkin && UserPrestige::userPrestiges[i].CategoryLevel == 2) {
+                addMedal = true;
+            }
+            if (BronzeSkin && UserPrestige::userPrestiges[i].CategoryLevel == 1) {
+                addMedal = true;
+            }
+
+            array<string> royal = {"Team01","Team02","Team03","Team04","Team05","Team06","Team07","Team08","Team09","Team10","Team11","Team12","Team13","Team14","Team15","Team16","Team17","Team18","Team19","Team20"};
+            if (RoyalSkin && royal.Find(UserPrestige::userPrestiges[i].CategoryType) != -1) {
+                addType = true;
+            }
+            array<string> season = {"Winter", "Spring", "Summer", "Fall"};
+            if (SeasonSkin && season.Find(UserPrestige::userPrestiges[i].CategoryType) != -1) {
+                addType = true;
+            }
+            array<string> ranked = {"Bronze", "Silver", "Gold", "Master"};
+            if (RankedSkin && ranked.Find(UserPrestige::userPrestiges[i].CategoryType) != -1) {
+                addType = true;
+            }
+
+            if (addMedal && addType) {
+                allSkins.InsertLast(UserPrestige::userPrestiges[i]);
+            }
         }
         // if (devLog) {
         //     print("Account Prestige:");

@@ -12,6 +12,9 @@
 
 ## Change log
 
+### v0.2
+- Add Prestige Skin Options
+
 ### v0.1.1
 - Fixes and Persistent Settings
 
